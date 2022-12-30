@@ -4,7 +4,7 @@ sources:
   - name: stage
     schema: raw
     tables:
-      - name: stg_citibike_trips
+      - name: citibike_trips
         description: Stage Citibike Trips
         columns:
           - name: tripduration
@@ -51,3 +51,5 @@ sources:
 
           - name: gender
             description: "Gender (unknown, male, female)"
+
+      # - name: citibike_stations

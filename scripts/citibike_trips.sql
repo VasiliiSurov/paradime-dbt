@@ -1,4 +1,4 @@
-CREATE TABLE `boxwood-academy-373200.raw.stg_citibike_trips`
+CREATE TABLE `boxwood-academy-373200.raw.citibike_trips`
 (
   tripduration INT64 OPTIONS(description="Trip Duration (in seconds)"),
   starttime DATETIME OPTIONS(description="Start Time, in NYC local time."),
@@ -16,4 +16,5 @@ CREATE TABLE `boxwood-academy-373200.raw.stg_citibike_trips`
   birth_year INT64 OPTIONS(description="Year of Birth"),
   gender STRING OPTIONS(description="Gender (unknown, male, female)")
 --   customer_plan STRING OPTIONS(description="The name of the plan that determines the rate charged for the trip")
-);
+)
+partition by date(starttime);

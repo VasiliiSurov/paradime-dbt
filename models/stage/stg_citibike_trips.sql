@@ -16,7 +16,7 @@ select
     {{ case_null_str('usertype') }},
     {{ case_null_str('birth_year', 'int64') }},
     {{ case_null_str('gender') }}
-from {{ source('stage', 'stg_citibike_trips') }}
+from {{ source('stage', 'citibike_trips') }}
 )
 select *
 from cte_citibike_trips
