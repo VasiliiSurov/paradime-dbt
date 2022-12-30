@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stations
+    columns:
+      - name: station_id
+        description: "User primary key"
+        tests:
+          - unique
+          - not_null
+      - name: station_name
+        description: "Station name"
+        tests:
+          - unique
+          - not_null
+      - name: station_latitude
+        description: "Station latitude"
+      - name: station_longitude
+        description: "Station longitude"
+  - name: chain_counts
+    description: "Chain counts"
+  - name: geo_station
+    description: "Transform to geo_point"
+  - name: chains
+    description: "Defines chain window"
+  - name: trips
+    description: "Incremental, raw trip data"
+  - name: trip_chanis
+    description: "Chain of trips"
+

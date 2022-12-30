@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: chain_counts_day
+    description: "Daily chain counts"
+  - name: chain_counts_month
+    description: "Monthly chain counts"
+  - name: chain_counts_year
+    description: "Yearly chain counts"

@@ -1,0 +1,78 @@
+[
+  {
+    "description": "Trip Duration (in seconds)",
+    "name": "tripduration",
+    "type": "INTEGER"
+  },
+  {
+    "description": "Start Time, in NYC local time.",
+    "name": "starttime",
+    "type": "DATETIME"
+  },
+  {
+    "description": "Stop Time, in NYC local time.",
+    "name": "stoptime",
+    "type": "DATETIME"
+  },
+  {
+    "description": "Start Station ID",
+    "name": "start_station_id",
+    "type": "INTEGER"
+  },
+  {
+    "description": "Start Station Name",
+    "name": "start_station_name",
+    "type": "STRING"
+  },
+  {
+    "description": "Start Station Latitude",
+    "name": "start_station_latitude",
+    "type": "FLOAT"
+  },
+  {
+    "description": "Start Station Longitude",
+    "name": "start_station_longitude",
+    "type": "FLOAT"
+  },
+  {
+    "description": "End Station ID",
+    "name": "end_station_id",
+    "type": "INTEGER"
+  },
+  {
+    "description": "End Station Name",
+    "name": "end_station_name",
+    "type": "STRING"
+  },
+  {
+    "description": "End Station Latitude",
+    "name": "end_station_latitude",
+    "type": "FLOAT"
+  },
+  {
+    "description": "End Station Longitude",
+    "name": "end_station_longitude",
+    "type": "FLOAT"
+  },
+  {
+    "description": "Bike ID",
+    "name": "bikeid",
+    "type": "INTEGER"
+  },
+  {
+    "description": "User Type (Customer = 24-hour pass or 7-day pass user, Subscriber = Annual Member)",
+    "name": "usertype",
+    "type": "STRING"
+  },
+  {
+    "description": "Year of Birth",
+    "name": "birth_year",
+    "type": "INTEGER"
+  },
+  {
+    "description": "Gender (unknown, male, female)",
+    "name": "gender",
+    "type": "STRING"
+  }
+]
+
