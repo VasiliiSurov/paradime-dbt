@@ -24,7 +24,7 @@ models:
   - name: chains
     description: "Defines chain window"
   - name: trips
-    description: "Incremental, raw trip data"
+    description: "Incremental, raw trip data2"
   - name: trip_chanis
     description: "Chain of trips"
 
