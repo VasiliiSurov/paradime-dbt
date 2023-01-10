@@ -6,7 +6,9 @@ SELECT
 , count(*) as cnt
 FROM {{ ref('trip_chains') }}
 group by 1,2
-), cte_stops as
+), 
+
+cte_stops as
 (
 SELECT
   chain_end_station_id as station_id
@@ -14,12 +16,16 @@ SELECT
 , count(*) as cnt
 FROM {{ ref('trip_chains') }}
 group by 1,2
-), cte_station as
+),
+
+cte_station as
 (
 select
   {{ dbt_utils.star(from=ref('geo_station')) }}
 from {{ ref('geo_station') }}
 )
+
+
 select
   s.station_id
 , st.station_name
@@ -35,4 +41,3 @@ where
     s.trip_date = e.trip_date
 and st.station_id = s.station_id
 and st.station_id = e.station_id
-
