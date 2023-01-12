@@ -1,0 +1,54 @@
+version: 2
+models:
+  - name: trip_chains
+    columns:
+      - name: bike_chain_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: bikeid
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: chain_breaktime
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: chain_starttime
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: chain_stoptime
+        description: ""
+        meta:
+          dimension:
+            type: timestamp
+      - name: chain_tripduration
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: chain_start_station_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: chain_end_station_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: chain_length
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: stations
+        description: ""
+        meta:
+          dimension:
+            type: string

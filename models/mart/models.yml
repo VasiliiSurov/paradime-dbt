@@ -1,9 +1,121 @@
 version: 2
-
 models:
   - name: chain_counts_day
-    description: "Daily chain counts"
+    description: Daily chain counts
+    columns:
+      - name: station_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: station_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: trip_date
+        description: ""
+        meta:
+          dimension:
+            type: date
+      - name: day
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: month
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: year
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: station_point
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: cnt_starts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: cnt_ends
+        description: ""
+        meta:
+          dimension:
+            type: number
   - name: chain_counts_month
-    description: "Monthly chain counts"
+    description: Monthly chain counts
+    columns:
+      - name: station_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: station_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: month
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: year
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: station_point
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: cnt_starts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: cnt_ends
+        description: ""
+        meta:
+          dimension:
+            type: number
   - name: chain_counts_year
-    description: "Yearly chain counts"
+    description: Yearly chain counts
+    columns:
+      - name: station_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: station_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: year
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: station_point
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: cnt_starts
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: cnt_ends
+        description: ""
+        meta:
+          dimension:
+            type: number
