@@ -12,7 +12,7 @@
 with cte_trips as
 (
 select
-    {{ dbt_utils.generate_surrogate_key(["bikeid", 'tripduration', 'starttime']) }} as trip_key,
+  {{ dbt_utils.surrogate_key(["bikeid", 'tripduration', 'starttime']) }} as trip_key,
   {{ dbt_utils.star(from=ref('stg_citibike_trips')) }}
 from {{ ref('stg_citibike_trips') }}
 )
