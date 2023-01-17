@@ -24,6 +24,36 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+vars:
+  # start of re_data related config
+  re_data:save_test_history: true
+  # querying BigQuery for failing rows
+  re_data:query_test_failures: false
+  
+  
+  # limit the number of failed rows returned per test
+  re_data:test_history_failures_limit: 10
+  re_data:metrics_groups:
+    table_metrics:
+      table:
+        - row_count
+        - freshness
+
+    column_metrics:
+      column:
+        numeric:
+          - nulls_count
+          - nulls_percent
+
+        text:
+          - missing_count
+          - missing_percent
+          - nulls_count
+          - nulls_percent
+
+  re_data:default_metrics:
+    - table_metrics
+    - column_metrics  
 
 models:
   paradime:
@@ -32,9 +62,15 @@ models:
       schema: stage
 
     analys:
+      +re_data_monitored: true
       materialized: table
       schema: analys
 
     mart:
+      +re_data_monitored: true
       materialized: table
       schema: mart
+    re_data:
+        +schema: re
+        internal:
+          +schema: re_internal
