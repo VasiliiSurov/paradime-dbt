@@ -1,7 +1,7 @@
 schedules:
   - name: paradime_debug #the name of your schedule
     schedule: "OFF" #the schedule cron configuration or user "OFF" if you want to disable the schedule
-    environment: prod #the environment used to run the schedule -> this is always production
+    environment: production #the environment used to run the schedule -> this is always production
     commands: #the set of dbt commands you want to run in the schedule
         - dbt debug
     owner_email: sova.paradime@gmail.com #the owner email
@@ -13,7 +13,7 @@ schedules:
 
   - name: paradime_compile #the name of your schedule
     schedule: "OFF" #the schedule cron configuration or user "OFF" if you want to disable the schedule
-    environment: prod #the environment used to run the schedule -> this is always production
+    environment: production #the environment used to run the schedule -> this is always production
     commands: #the set of dbt commands you want to run in the schedule
         - dbt compile
     owner_email: sova.paradime@gmail.com #the owner email
@@ -25,7 +25,7 @@ schedules:
 
   - name: paradime_run #the name of your schedule
     schedule: "OFF" #the schedule cron configuration or user "OFF" if you want to disable the schedule
-    environment: prod #the environment used to run the schedule -> this is always production
+    environment: production #the environment used to run the schedule -> this is always production
     commands: #the set of dbt commands you want to run in the schedule
         - dbt run
         - dbt test
