@@ -1,6 +1,6 @@
 schedules:
   - name: paradime_debug #the name of your schedule
-    schedule: "OFF" #the schedule cron configuration or user "OFF" if you want to disable the schedule
+    schedule: "0 0 1 1 *" #the schedule cron configuration or user "OFF" if you want to disable the schedule
     environment: production #the environment used to run the schedule -> this is always production
     commands: #the set of dbt commands you want to run in the schedule
         - dbt debug
@@ -12,7 +12,7 @@ schedules:
         - failed 
 
   - name: paradime_compile #the name of your schedule
-    schedule: "OFF" #the schedule cron configuration or user "OFF" if you want to disable the schedule
+    schedule: "0 0 1 1 *" #the schedule cron configuration or user "OFF" if you want to disable the schedule
     environment: production #the environment used to run the schedule -> this is always production
     commands: #the set of dbt commands you want to run in the schedule
         - dbt compile
@@ -24,7 +24,7 @@ schedules:
         - failed 
 
   - name: paradime_run #the name of your schedule
-    schedule: "OFF" #the schedule cron configuration or user "OFF" if you want to disable the schedule
+    schedule: "0 0 1 1 *" #the schedule cron configuration or user "OFF" if you want to disable the schedule
     environment: production #the environment used to run the schedule -> this is always production
     commands: #the set of dbt commands you want to run in the schedule
         - dbt run
