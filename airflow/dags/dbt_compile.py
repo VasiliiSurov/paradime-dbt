@@ -24,14 +24,14 @@ from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.sensors.python import PythonSensor
 
-SCHEDULE_NAME = "paradime_compile"
+SCHEDULE_NAME = "paradime compile"
 
 DAG_ID = "0_bolt_airflow"
-SCHEDULE_INTERVAL = "None"
+SCHEDULE_INTERVAL = None
 
 
 def run_schedule(
-    schedule_name: str, url: str, headers: dict[str, str], task_instance: TaskInstance
+    schedule_name, url, headers, task_instance
 ) -> None:
     query = """
     mutation trigger($scheduleName: String!) {
@@ -52,7 +52,7 @@ def run_schedule(
     task_instance.xcom_push(key="run_id", value=run_id)
 
 
-def get_run_status(url: str, headers: dict[str, str], task_instance: TaskInstance) -> bool:
+def get_run_status(url, headers, task_instance):
     query = """
     query Status($runId: Int!) {
       boltRunStatus(runId: $runId) {
@@ -75,7 +75,7 @@ def get_run_status(url: str, headers: dict[str, str], task_instance: TaskInstanc
     return state != "RUNNING"
 
 
-def _extract_gql_response(request: requests.Response, query_name: str, field: str) -> str:
+def _extract_gql_response(request, query_name, field):
     response_json = request.json()
     if "errors" in response_json:
         raise Exception(f"{response_json['errors']}")

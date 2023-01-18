@@ -4,3 +4,4 @@ dbt_packages/
 logs/
 csv_data/
 docker/dbt-paradime.json
+docker/api_key.json
