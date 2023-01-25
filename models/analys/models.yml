@@ -152,7 +152,7 @@ models:
         description: "Trip duration"
         meta: {}
       - name: starttime
-        description: ""
+        description: "Start Time"
         meta: {}
       - name: stoptime
         description: ""
