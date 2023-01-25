@@ -146,10 +146,10 @@ models:
     description: Incremental, raw trip data2
     columns:
       - name: trip_key
-        description: ""
+        description: "Trip Key"
         meta: {}
       - name: tripduration
-        description: ""
+        description: "Trip duration"
         meta: {}
       - name: starttime
         description: ""
