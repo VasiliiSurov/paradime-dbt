@@ -9,17 +9,18 @@
             }
     )
 }}
-with cte_trips as
-(
-select
-  {{ dbt_utils.surrogate_key(["bikeid", 'tripduration', 'starttime']) }} as trip_key,
-  {{ dbt_utils.star(from=ref('stg_citibike_trips')) }}
-from {{ ref('stg_citibike_trips') }}
+with cte_trips as (
+    select
+        {{ dbt_utils.surrogate_key(["bikeid", 'tripduration', 'starttime']) }} as trip_key,
+        {{ dbt_utils.star(from=ref('stg_citibike_trips')) }}
+    from {{ ref('stg_citibike_trips') }}
 )
+
 select
-    *
-from cte_trips t
+    *,
+    1 as artificial_id
+from cte_trips as t
 {% if is_incremental() -%}
   -- this filter will only be applied on an incremental run
-  where not exists (select 1 from {{ this }} s where t.trip_key = s.trip_key)
+    where not exists (select 1 from {{ this }} as s where t.trip_key = s.trip_key)
 {% endif %}
