@@ -112,22 +112,10 @@
 15. Build dbt models:
     chains start [end == start] [end == start] .. end
 
-16. Cloud build
-    1. Authorize application in github
-    2. Add IAM role to the SA (Composer Admin or less)
-    3. Triggers on push to master
-    4. Synchronizes Airflow DAG folder with github
+16. Composer jobs
+    [dbt_compile.py](airflow/dags/dbt_compile.py)
 
-17. Triggers Composer job to run and test dbt in DEV
-
-18. Cloud function
-    Triggers Composer job to load csv, rebuilds and test dbt, and finally archive source file
-
-19. Composer jobs
-    1. run and test dbt in DEV, triggers from github on push to master
-    2. load csv, run and test in PROD, archive csv, triggers by cloud function when new file arrives
-
-20. Models: see dbt docs
+17. Models: see dbt docs
     ```
     dbt docs generate
     dbt docs serve
