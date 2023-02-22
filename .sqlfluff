@@ -1,0 +1,69 @@
+[sqlfluff]
+verbose = 0
+dialect = bigquery
+templater = dbt
+rules = None
+exclude_rules = L031,L032,L033,L034,L037,L044,L059,L057
+recurse = 0
+output_line_length = 200
+runaway_limit = 100
+ignore = parsing,templating
+ignore_templated_areas = True
+large_file_skip_char_limit = 0
+
+# [sqlfluff:templater:dbt]
+# project_dir = apps/da3_enrichment/
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = True
+
+[layout:type:comma:line_position]
+spacing_before = touch
+line_position = trailing
+
+[sqlfluff:rules]
+max_line_length = 200
+tab_space_size = 4
+indent_unit = space
+allow_scalar = True
+single_table_references = unqualified
+
+[sqlfluff:templater]
+unwrap_wrapped_queries = True
+
+[sqlfluff:indentation]
+indented_joins = False
+template_blocks_indent = True
+
+[sqlfluff:rules:L010]  # Keywords
+capitalisation_policy = lower
+
+[sqlfluff:rules:L014]  # Unquoted identifiers
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:L016]
+ignore_comment_lines = True
+max_line_length = 200
+
+[sqlfluff:rules:L029]  # Keyword identifiers
+unquoted_identifiers_policy = none
+
+[sqlfluff:rules:L030]  # Function names
+capitalisation_policy = lower
+
+[sqlfluff:rules:L038]
+select_clause_trailing_comma = forbid
+
+[sqlfluff:rules:L040]  # Null & Boolean Literals
+capitalisation_policy = lower
+
+[sqlfluff:rules:L042]
+# By default, allow subqueries in from clauses, but not join clauses.
+forbid_subquery_in = join
+
+[sqlfluff:rules:L047]  # Consistent syntax to count all rows
+prefer_count_1 = False
+
+[sqlfluff:rules:L066]
+# Enforce table alias lengths in from clauses and join conditions.
+min_alias_length = 3

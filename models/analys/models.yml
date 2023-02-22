@@ -99,131 +99,81 @@ models:
     columns:
       - name: trip_key
         description: ""
-        meta:
-          dimension:
-            type: string
+        meta: {}
       - name: bikeid
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: start_station_id
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: end_station_id
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: starttime
         description: ""
-        meta:
-          dimension:
-            type: timestamp
+        meta: {}
       - name: stoptime
         description: ""
-        meta:
-          dimension:
-            type: timestamp
+        meta: {}
       - name: tripduration
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: bike_chain_id
-        description: ""
-        meta:
-          dimension:
-            type: number
+        description: "Bike Change ID"
+        meta: {}
       - name: chain_breaktime
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
   - name: trips
     description: Incremental, raw trip data2
     columns:
       - name: trip_key
-        description: ""
-        meta:
-          dimension:
-            type: string
+        description: "Trip Key"
+        meta: {}
       - name: tripduration
-        description: ""
-        meta:
-          dimension:
-            type: number
+        description: "Trip duration"
+        meta: {}
       - name: starttime
-        description: ""
-        meta:
-          dimension:
-            type: timestamp
+        description: "Start Time"
+        meta: {}
       - name: stoptime
         description: ""
-        meta:
-          dimension:
-            type: timestamp
+        meta: {}
       - name: start_station_id
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: start_station_name
         description: ""
-        meta:
-          dimension:
-            type: string
+        meta: {}
       - name: start_station_latitude
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: start_station_longitude
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: end_station_id
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: end_station_name
         description: ""
-        meta:
-          dimension:
-            type: string
+        meta: {}
       - name: end_station_latitude
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: end_station_longitude
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: bikeid
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: usertype
         description: ""
-        meta:
-          dimension:
-            type: string
+        meta: {}
       - name: birth_year
         description: ""
-        meta:
-          dimension:
-            type: number
+        meta: {}
       - name: gender
         description: ""
-        meta:
-          dimension:
-            type: string
+        meta: {}
   - name: trip_chanis
     description: Chain of trips
